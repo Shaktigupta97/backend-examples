@@ -65,3 +65,26 @@ loadTemplate();
 // }
 
 // basicJQueryExample();
+
+$('#form-ajax-submit').on('submit', function(){
+  $.ajax({
+    method: "POST",
+    url: "/process-request.php",
+    data: {
+      "name-field": $('#nameField').val(),
+      "address-field": $('#inputAddress').val(),
+      "city-field": $('#inputCity').val()
+    }
+  }).done(function(response) {
+    if('success' == response){
+
+    } else  {
+
+    }
+    // $('#ajax-success').css('display', 'block').find('p').html(response);
+  }).fail(function(error){
+    $('#ajax-failed').css('display', 'block').find('p').html(error);
+  });
+
+ return false;
+});

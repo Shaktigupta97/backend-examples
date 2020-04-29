@@ -11,28 +11,46 @@
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" data-load-template="/template/nav.data"></nav>
+
   <div class="container">
     <div class="row">
-      <div class="col-12"> 
+      <div class="col-12 py-5"> 
+
+        <div class="alert alert-success alert-dismissible fade show mb-5" role="alert" id="ajax-success" style="display: none;">
+          <strong>Form Submitted Successfully</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <hr>
+          <p></p>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show mb-5" role="alert" id="ajax-failed" style="display: none;">
+          <strong>Form Submission Failed!</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <hr>
+          <p></p>
+        </div>
+
         <h1 class="text-center">Form Example</h1>
-        <form>
+        <form id="form-ajax-submit">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <label for="nameField">Name</label>
+              <input type="text" class="form-control" id="nameField" placeholder="Name">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
             </div>
           </div>
           <div class="form-group">
             <label for="inputAddress">Address</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
